@@ -17,7 +17,8 @@ export default {
         'desaturated-dark-cyan': '#5BA4A4',
         'light-grayish-cyan': '#EFFAFA',
         'dark-grayish-cyan': '#7B8E8E',
-        'very-dark-grayish-cyan': '#2C3A3A'
+        'very-dark-grayish-cyan': '#2C3A3A',
+        white: '#FFFFFF'
       }
     }
   },

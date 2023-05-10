@@ -7,7 +7,7 @@ interface JobListingProps {
 
 export const JobList = ({ jobs }: JobListingProps) => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col items-center gap-5 p-10">
       {jobs.map((job) => (
         <JobItem key={job.id} job={job} />
       ))}

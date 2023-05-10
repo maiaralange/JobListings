@@ -13,7 +13,7 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-light-grayish-cyan h-screen">
+    <div className="h-full bg-light-grayish-cyan">
       <Header />
       <JobList jobs={jobs} />
     </div>
