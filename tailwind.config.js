@@ -11,7 +11,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: 'Poppins'
+        sans: 'Inter'
       },
       colors: {
         'desaturated-dark-cyan': '#5BA4A4',

@@ -1,4 +1,5 @@
 import { JobListing } from '../types';
+import { Tag } from './Tag';
 
 interface JobItemProps {
   job: JobListing;
@@ -25,10 +26,24 @@ export const JobItem = ({ job }: JobItemProps) => {
           )}
         </div>
         <p className="text-base font-bold">{job.position}</p>
-        <p className="text-sm text-dark-grayish-cyan">{job.postedAt}</p>
+        <div className="flex items-center">
+          <p className="text-xs text-dark-grayish-cyan">{job.postedAt}</p>
+          <div className="mx-3 h-1 w-1 rounded-full bg-dark-grayish-cyan" />
+          <p className="text-xs text-dark-grayish-cyan">{job.contract}</p>
+          <div className="mx-3 h-1 w-1 rounded-full bg-dark-grayish-cyan" />
+          <p className="text-xs text-dark-grayish-cyan">{job.location}</p>
+        </div>
+      </div>
+      <div className="m-2 flex flex-1 items-center justify-end">
+        <Tag label={job.role} />
+        <Tag label={job.level} />
+        {job.languages.map((language) => (
+          <Tag label={language} />
+        ))}
+        {job.tools.map((tool) => (
+          <Tag label={tool} />
+        ))}
       </div>
     </div>
   );
 };
-
-// className="flex items-center rounded-full bg-desaturated-dark-cyan px-1 text-xs text-white"
