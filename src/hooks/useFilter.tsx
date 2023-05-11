@@ -10,6 +10,7 @@ interface FilterContextData {
   filter: Filter[];
   addFilter: (name: string, type: TagType) => void;
   removeFilter: (name: string) => void;
+  clear: () => void;
 }
 
 interface FilterProviderProps {
@@ -29,8 +30,12 @@ export function FilterProvider({ children }: FilterProviderProps) {
     setFilter((previous) => previous.filter((tag) => tag.name != name));
   }
 
+  function clear() {
+    setFilter([]);
+  }
+
   return (
-    <FilterContext.Provider value={{ filter, addFilter, removeFilter }}>
+    <FilterContext.Provider value={{ filter, addFilter, removeFilter, clear }}>
       {children}
     </FilterContext.Provider>
   );
