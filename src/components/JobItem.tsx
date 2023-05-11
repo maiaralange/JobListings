@@ -14,12 +14,12 @@ export const JobItem = ({ job }: JobItemProps) => {
             {job.company}
           </p>
           {job.new && (
-            <div className="text-xs font-bold">
+            <div className="rounded-full bg-desaturated-dark-cyan px-2 py-[2px] text-xs font-bold text-white">
               <span>NEW!</span>
             </div>
           )}
           {job.featured && (
-            <div className="text-xs font-bold">
+            <div className="rounded-full bg-very-dark-grayish-cyan px-2 py-[2px] text-xs font-bold text-white">
               <span>FEATURED</span>
             </div>
           )}
