@@ -18,16 +18,12 @@ export const Tag = ({ label, onClick }: TagProps) => {
   const [selected, setSelected] = useState(false);
 
   useEffect(() => {
-    if (filter.find((tag) => tag.name == label)) {
-      setSelected(true);
-    } else {
-      setSelected(false);
-    }
+    setSelected(Boolean(filter.find((tag) => tag.name == label)));
   }, [filter]);
 
   return (
     <button
-      className={`m-1 rounded-md px-2 py-1 text-xs font-bold hover:brightness-75 ${
+      className={`m-1 rounded-md px-2 py-1 text-xs font-bold hover:brightness-75 active:bg-very-dark-grayish-cyan ${
         selected
           ? 'bg-desaturated-dark-cyan text-white'
           : 'bg-desaturated-dark-cyan/10 text-desaturated-dark-cyan'
