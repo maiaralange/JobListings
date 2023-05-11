@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { FilterBar } from './components/FilterBar';
 import { Header } from './components/Header';
 import { JobList } from './components/JobListing';
-import { TagType } from './components/Tag';
+import { FilterProvider } from './hooks/useFilter';
 import { get } from './services/api';
 
 export interface JobListing {
@@ -21,14 +21,8 @@ export interface JobListing {
   tools: string[];
 }
 
-export interface Filter {
-  type: TagType;
-  name: string;
-}
-
 function App() {
   const [jobs, setJobs] = useState([] as JobListing[]);
-  const [filter, setFilter] = useState([] as Filter[]);
 
   useEffect(() => {
     const data = get();
@@ -36,11 +30,13 @@ function App() {
   }, []);
 
   return (
-    <div className="h-full bg-light-grayish-cyan">
-      <Header />
-      <FilterBar filterItems={filter} />
-      <JobList jobs={jobs} updateFilter={setFilter} />
-    </div>
+    <FilterProvider>
+      <div className="h-full bg-light-grayish-cyan">
+        <Header />
+        <FilterBar />
+        <JobList jobs={jobs} />
+      </div>
+    </FilterProvider>
   );
 }
 

@@ -1,17 +1,19 @@
-import { Filter, JobListing } from '../App';
+import { JobListing } from '../App';
+import { useFilter } from '../hooks/useFilter';
 import { Tag, TagType } from './Tag';
 
 interface JobItemProps {
   job: JobListing;
-  updateFilter: React.Dispatch<React.SetStateAction<Filter[]>>;
 }
 
-export const JobItem = ({ job, updateFilter }: JobItemProps) => {
+export const JobItem = ({ job }: JobItemProps) => {
+  const { addFilter, removeFilter } = useFilter();
+
   const tagClicked = (type: TagType, name: string, selected: boolean) => {
     if (selected) {
-      updateFilter((previous) => [...previous, { type, name }]);
+      addFilter(name, type);
     } else {
-      updateFilter((previous) => previous.filter((tag) => tag.name != name));
+      removeFilter(name);
     }
   };
 
@@ -56,16 +58,18 @@ export const JobItem = ({ job, updateFilter }: JobItemProps) => {
           onClick={(selected) => tagClicked(TagType.Level, job.level, selected)}
           label={job.level}
         />
-        {job.languages.map((language) => (
+        {job.languages.map((language, index) => (
           <Tag
+            key={index}
             onClick={(selected) =>
               tagClicked(TagType.Language, language, selected)
             }
             label={language}
           />
         ))}
-        {job.tools.map((tool) => (
+        {job.tools.map((tool, index) => (
           <Tag
+            key={index}
             onClick={(selected) => tagClicked(TagType.Tool, tool, selected)}
             label={tool}
           />
