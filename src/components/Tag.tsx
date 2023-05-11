@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useFilter } from '../hooks/useFilter';
 
 interface TagProps {
   label: string;
@@ -13,7 +14,16 @@ export enum TagType {
 }
 
 export const Tag = ({ label, onClick }: TagProps) => {
+  const { filter } = useFilter();
   const [selected, setSelected] = useState(false);
+
+  useEffect(() => {
+    if (filter.find((tag) => tag.name == label)) {
+      setSelected(true);
+    } else {
+      setSelected(false);
+    }
+  }, [filter]);
 
   return (
     <button
