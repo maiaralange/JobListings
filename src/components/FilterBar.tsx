@@ -16,12 +16,11 @@ export const FilterBar = () => {
                 <span className="px-2 py-1 text-xs font-bold text-desaturated-dark-cyan">
                   {item.name}
                 </span>
-                <button className="rounded-r-md bg-desaturated-dark-cyan px-2 hover:brightness-75 active:bg-very-dark-grayish-cyan">
-                  <img
-                    src={removeImg}
-                    className="h-2 w-2"
-                    onClick={() => removeFilter(item.name)}
-                  />
+                <button
+                  className="rounded-r-md bg-desaturated-dark-cyan px-2 hover:brightness-75 active:bg-very-dark-grayish-cyan"
+                  onClick={() => removeFilter(item.name)}
+                >
+                  <img src={removeImg} className="h-2 w-2" />
                 </button>
               </div>
             ))
