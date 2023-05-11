@@ -11,7 +11,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: '"League Spartan"'
+        sans: 'Poppins'
       },
       colors: {
         'desaturated-dark-cyan': '#5BA4A4',
