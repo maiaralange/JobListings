@@ -5,14 +5,14 @@ export const FilterBar = () => {
   const { filter, removeFilter, clear } = useFilter();
   return (
     <div className="flex justify-center">
-      <div className="-mt-5 flex h-auto min-h-[2.5rem] w-4/5 items-center rounded-md bg-white px-5 py-2 shadow-lg shadow-desaturated-dark-cyan/30">
+      <div className="-mt-6 flex h-auto min-h-[3rem] w-4/5 items-center rounded-md bg-white px-5 py-2 shadow-lg shadow-desaturated-dark-cyan/30">
         <div className="flex w-full justify-between">
           {filter.length ? (
             <div className="flex flex-wrap">
               {filter.map((item, index) => (
                 <div
                   key={index}
-                  className="mr-2 flex justify-center rounded-md bg-desaturated-dark-cyan/10"
+                  className="m-1 mr-2 flex justify-center rounded-md bg-desaturated-dark-cyan/10"
                 >
                   <span className="px-2 py-1 text-xs font-bold text-desaturated-dark-cyan">
                     {item.name}
