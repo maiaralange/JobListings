@@ -32,7 +32,9 @@ export const FilterBar = () => {
             </span>
           )}
           <button
-            className="text-sm font-bold text-desaturated-dark-cyan hover:brightness-75 active:underline"
+            className={`text-sm font-bold text-desaturated-dark-cyan hover:brightness-75 active:underline ${
+              !filter.length && 'hidden'
+            }`}
             onClick={clear}
           >
             Clear

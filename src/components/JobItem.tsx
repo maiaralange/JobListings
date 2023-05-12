@@ -23,7 +23,7 @@ export const JobItem = ({ job }: JobItemProps) => {
         job.featured && 'border-l-4 border-very-dark-grayish-cyan'
       }`}
     >
-      <img src={job.logo} className="h-15 w-15 pr-5" />
+      <img src={job.logo} className="h-15 w-15 object-contain pr-5" />
       <div className="flex flex-col justify-between py-1">
         <div className="flex items-center gap-2">
           <p className="pr-2 text-sm font-bold text-desaturated-dark-cyan">
