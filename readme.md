@@ -18,7 +18,7 @@ This project was built using the following technologies:
 
 ## Getting Started
 
-To get started, clone this repository and run the following command:
+To get started, clone this repository and run the following commands:
 
 `yarn install` - this will install all the required dependencies.
 
