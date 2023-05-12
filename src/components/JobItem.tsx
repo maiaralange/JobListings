@@ -19,15 +19,15 @@ export const JobItem = ({ job }: JobItemProps) => {
 
   return (
     <div
-      className={`flex w-4/5 rounded-md bg-white p-5 shadow-lg shadow-desaturated-dark-cyan/30 ${
+      className={`m-2 flex w-4/5 flex-col rounded-md bg-white p-5 shadow-lg shadow-desaturated-dark-cyan/30 md:m-0 md:flex-row ${
         job.featured && 'border-l-4 border-very-dark-grayish-cyan'
       }`}
     >
       <img
         src={job.logo}
-        className="h-14 w-14 object-contain pr-5 md:h-24 md:w-24"
+        className="-mt-12 h-16 w-16 object-contain pr-5 md:m-0 md:h-24 md:w-24"
       />
-      <div className="flex flex-col justify-between py-3">
+      <div className="flex flex-col justify-between gap-2 py-0 md:gap-0 md:py-3">
         <div className="flex items-center gap-2">
           <p className="pr-2 text-sm font-bold text-desaturated-dark-cyan">
             {job.company}
@@ -43,7 +43,7 @@ export const JobItem = ({ job }: JobItemProps) => {
             </div>
           )}
         </div>
-        <p className="text-base font-bold">{job.position}</p>
+        <p className="text-sm font-bold md:text-base">{job.position}</p>
         <div className="flex items-center">
           <p className="text-xs text-dark-grayish-cyan">{job.postedAt}</p>
           <div className="mx-3 h-1 w-1 rounded-full bg-dark-grayish-cyan" />
@@ -52,7 +52,8 @@ export const JobItem = ({ job }: JobItemProps) => {
           <p className="text-xs text-dark-grayish-cyan">{job.location}</p>
         </div>
       </div>
-      <div className="m-2 flex flex-1 flex-wrap items-center justify-end">
+      <div className="my-4 h-[1px] w-full rounded-full bg-dark-grayish-cyan/30 md:hidden"></div>
+      <div className="flex flex-1 flex-wrap items-center md:m-2 md:justify-end">
         <Tag
           onClick={(selected) => tagClicked(TagType.Role, job.role, selected)}
           label={job.role}
