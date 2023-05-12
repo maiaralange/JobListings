@@ -1,5 +1,5 @@
-import removeImg from '../assets/icon-remove.svg';
 import { useFilter } from '../hooks/useFilter';
+import removeImg from '/assets/icon-remove.svg';
 
 export const FilterBar = () => {
   const { filter, removeFilter, clear } = useFilter();
