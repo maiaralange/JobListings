@@ -31,7 +31,7 @@ function App() {
 
   return (
     <FilterProvider>
-      <div className="h-full bg-light-grayish-cyan">
+      <div className="min-h-screen bg-light-grayish-cyan">
         <Header />
         <FilterBar />
         <JobList jobs={jobs} />
