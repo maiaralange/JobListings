@@ -24,8 +24,6 @@ To get started, clone this repository and run the following command:
 
 `yarn dev` - this will start the app in development mode.
 
-`npx tailwindcss -i ./src/styles/global.css -o ./dist/output.css --watch` - to build Tailwind styles.
-
 ## Data Source
 
 The job listings data is coming from a local JSON file located at /src/services/data.json.
