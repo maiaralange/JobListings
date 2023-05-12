@@ -21,7 +21,9 @@ This project was built using the following technologies:
 To get started, clone this repository and run the following command:
 
 `yarn install` - this will install all the required dependencies.
+
 `yarn dev` - this will start the app in development mode.
+
 `npx tailwindcss -i ./src/styles/global.css -o ./dist/output.css --watch` - to build Tailwind styles.
 
 ## Data Source
